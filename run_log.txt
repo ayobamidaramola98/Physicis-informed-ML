@@ -1,0 +1,27 @@
+Starting SFE hybrid pipeline...
+Training physics baseline + residual XGBoost hybrid (GroupKFold CV)...
+Hybrid training metrics: {'RMSE': 8.311037368632133, 'MAE': 4.315564467300707, 'R2': 0.9298019672328008, 'MedAE': 3.0496550642707376}
+Hybrid GroupKFold CV metrics: {'RMSE': 28.46654600511899, 'MAE': 11.899584282532592, 'R2': 0.1764612823102103, 'MedAE': 7.067296800105398}
+Running Optuna tuning for residual XGBoost (small budget)...
+Optuna tuning skipped/failed: XGBModel.fit() got an unexpected keyword argument 'early_stopping_rounds'
+Training PyTorch MLP for MC Dropout UQ...
+Saved MLP and scaler.
+Hybrid holdout metrics (group-wise): {'RMSE': 12.707845256830224, 'MAE': 6.52205402264392, 'R2': 0.8420379367279784, 'MedAE': 3.009475931523127}
+Physics baseline coefficients:
+{
+  "intercept": 36.29557142857081,
+  "coefs": {
+    "VEC": 64.02120514148768,
+    "delta_size_percent": 27.90986704592619,
+    "S_mix_J_molK": 6.564529762225559,
+    "mixing_enthalpy_proxy": -91.0205507199735,
+    "avg_en": -104.26990173740319,
+    "var_en": 6.725130316812519
+  }
+}
+Saved summary and artifacts in results_sfe_full/
+Training advanced models: GPR, KRR, and stacking ensemble...
+Advanced models trained. Best: ('GPR_full', {'model': GaussianProcessRegressor(kernel=1**2 * Matern(length_scale=1, nu=1.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=5, normalize_y=True), 'metrics': {'RMSE': 11.987345700682782, 'MAE': 7.956670356550081, 'R2': 0.8539637973143158, 'MedAE': 5.676564981412874}, 'cv_preds': array([21.10775687, 21.10953948, 22.56632293, ..., 35.93215998,
+       39.31985926, 44.04432828], shape=(1470,))})
+Pipeline finished in 474.51 minutes.

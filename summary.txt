@@ -1,0 +1,34 @@
+SFE hybrid pipeline summary
+Timestamp: Mon Dec 15 21:33:04 2025
+Original points: 210
+Augmented points: 1470
+Hybrid training metrics:
+{
+  "RMSE": 8.311037368632133,
+  "MAE": 4.315564467300707,
+  "R2": 0.9298019672328008,
+  "MedAE": 3.0496550642707376
+}
+Hybrid GroupKFold CV metrics:
+{
+  "RMSE": 28.46654600511899,
+  "MAE": 11.899584282532592,
+  "R2": 0.1764612823102103,
+  "MedAE": 7.067296800105398
+}
+Holdout metrics (group-wise):
+{
+  "RMSE": 12.707845256830224,
+  "MAE": 6.52205402264392,
+  "R2": 0.8420379367279784,
+  "MedAE": 3.009475931523127
+}
+Physics coefficients:
+{
+  "VEC": 64.02120514148768,
+  "delta_size_percent": 27.90986704592619,
+  "S_mix_J_molK": 6.564529762225559,
+  "mixing_enthalpy_proxy": -91.0205507199735,
+  "avg_en": -104.26990173740319,
+  "var_en": 6.725130316812519
+}
